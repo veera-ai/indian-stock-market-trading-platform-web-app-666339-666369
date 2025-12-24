@@ -29,6 +29,9 @@
     "depcheck": "depcheck",
     "build": "tsc --noEmit"
   },
+  "dependencies": {
+    "react-router-dom": "^6.28.0"
+  },
   "devDependencies": {
     "@types/react": "^18.3.11",
     "@types/react-dom": "^18.3.0",

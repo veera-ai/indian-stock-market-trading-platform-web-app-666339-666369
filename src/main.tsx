@@ -1,15 +1,51 @@
 import type { JSX } from 'react';
 import ReactDOM from 'react-dom/client';
+import { BrowserRouter, Link, Route, Routes } from 'react-router-dom';
+import Dashboard from './pages/Dashboard';
+import Watchlist from './pages/Watchlist';
+import Portfolio from './pages/Portfolio';
 
 /**
- * Minimal React entry for TypeScript type-checking in strict mode.
- * This can be used by any bundler (e.g., Vite, CRA, Webpack) once configured.
+ * Minimal React entry for TypeScript strict mode with router.
+ * Provides simple navigation between Dashboard, Watchlist, and Portfolio.
  */
 function App(): JSX.Element {
   return (
-    <main role="main" aria-label="Application Root">
-      Indian Stock Market Trading Platform
-    </main>
+    <BrowserRouter>
+      <header
+        role="banner"
+        style={{
+          borderBottom: '1px solid #e5e7eb',
+          marginBottom: '1rem',
+          padding: '0.75rem 1rem',
+          display: 'flex',
+          gap: '1rem',
+        }}
+      >
+        <strong aria-label="Application Name">Indian Stock Market</strong>
+        <nav aria-label="Primary">
+          <ul style={{ display: 'flex', gap: '0.75rem', listStyle: 'none', margin: 0, padding: 0 }}>
+            <li>
+              <Link to="/">Dashboard</Link>
+            </li>
+            <li>
+              <Link to="/watchlist">Watchlist</Link>
+            </li>
+            <li>
+              <Link to="/portfolio">Portfolio</Link>
+            </li>
+          </ul>
+        </nav>
+      </header>
+
+      <main role="main" aria-label="Application Root" style={{ padding: '0 1rem' }}>
+        <Routes>
+          <Route path="/" element={<Dashboard />} />
+          <Route path="/watchlist" element={<Watchlist />} />
+          <Route path="/portfolio" element={<Portfolio />} />
+        </Routes>
+      </main>
+    </BrowserRouter>
   );
 }
 
