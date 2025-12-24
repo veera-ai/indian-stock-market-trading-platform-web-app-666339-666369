@@ -24,3 +24,8 @@ Note: Running npm commands from the repo root (outside this folder) will fail be
 ### Type Checking
 Run strict TypeScript checks (no emit) with:
 - npm run type-check
+
+### Helpful Tips
+- The Watchlist and Portfolio pages persist to LocalStorage; clear your browser site data if you want to reset.
+- Sorting is available on both pages. Portfolio supports P&L-based sorting.
+- Prices on the Portfolio page are mock values stored locally; update them per row to recalculate P&L.
