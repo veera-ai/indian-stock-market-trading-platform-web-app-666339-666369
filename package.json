@@ -18,11 +18,12 @@
     "node": ">=18"
   },
   "scripts": {
-    "lint": "eslint \"src/**/*.{js,jsx,ts,tsx}\"",
+    "lint": "eslint \"src/**/*.{js,jsx,ts,tsx}\" && prettier --check .",
     "type-check": "tsc --noEmit",
     "format": "prettier --check .",
     "format:write": "prettier --write .",
-    "depcheck": "depcheck"
+    "depcheck": "depcheck",
+    "build": "tsc --noEmit"
   },
   "devDependencies": {
     "@types/react": "^18.3.11",
