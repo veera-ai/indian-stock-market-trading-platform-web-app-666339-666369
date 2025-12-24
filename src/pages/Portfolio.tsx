@@ -7,7 +7,7 @@ import type { JSX } from 'react';
 export default function Portfolio(): JSX.Element {
   return (
     <section aria-labelledby="portfolio-heading">
-      <h1 id="portfolio-heading">Portfolio</h1>
+      <h1 id="portfolio-heading" style={{ marginTop: 0 }}>Portfolio</h1>
       <p>View your holdings and performance.</p>
     </section>
   );

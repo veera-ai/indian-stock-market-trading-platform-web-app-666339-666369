@@ -8,7 +8,7 @@ import type { JSX } from 'react';
 export default function Dashboard(): JSX.Element {
   return (
     <section aria-labelledby="dashboard-heading">
-      <h1 id="dashboard-heading">Dashboard</h1>
+      <h1 id="dashboard-heading" style={{ marginTop: 0 }}>Dashboard</h1>
       <p>Welcome to the Indian Stock Market Trading Platform dashboard.</p>
     </section>
   );

@@ -27,7 +27,8 @@
     "type-check": "tsc --noEmit",
     "check": "npm run type-check && npm run lint",
     "depcheck": "depcheck",
-    "build": "tsc --noEmit"
+    "build": "tsc --noEmit",
+    "postinstall": "node -e \"console.log('Dependencies installed. Run npm scripts from indian-stock-market-web-app container directory.')\""
   },
   "dependencies": {
     "react-router-dom": "^6.28.0"
