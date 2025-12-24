@@ -148,6 +148,17 @@ button:focus-visible,
   padding: 1rem;
 }
 
+/* Trend helpers for up/down/flat semantics */
+.trend-up {
+  color: green;
+}
+.trend-down {
+  color: crimson;
+}
+.trend-flat {
+  color: #374151;
+}
+
 /* Responsive: collapse sidebar at small widths */
 @media (max-width: 768px) {
   .app-shell {
