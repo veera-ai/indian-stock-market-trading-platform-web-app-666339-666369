@@ -20,3 +20,7 @@ This repository includes TypeScript, ESLint (strict), and Prettier. Run all npm 
   - npm run depcheck
 
 Note: Running npm commands from the repo root (outside this folder) will fail because package.json is located here.
+
+### Type Checking
+Run strict TypeScript checks (no emit) with:
+- npm run type-check

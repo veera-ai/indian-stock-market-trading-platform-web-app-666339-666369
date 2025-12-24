@@ -1,25 +1,39 @@
 {
   "compilerOptions": {
+    // Targets and libs for modern browsers
     "target": "ES2020",
     "lib": ["DOM", "DOM.Iterable", "ES2020"],
+
+    // React JSX transform
     "jsx": "react-jsx",
+
+    // Bundler-friendly module settings
     "module": "ESNext",
     "moduleResolution": "Bundler",
     "resolveJsonModule": true,
+
+    // Interop and consistency
     "esModuleInterop": true,
+    "allowSyntheticDefaultImports": true,
     "forceConsistentCasingInFileNames": true,
+
+    // Strictness (requested)
     "strict": true,
+    "noImplicitAny": true,
+    "noUncheckedIndexedAccess": true,
+    "noFallthroughCasesInSwitch": true,
+    "exactOptionalPropertyTypes": true,
+    "useUnknownInCatchVariables": true,
+
+    // Build / check ergonomics
     "skipLibCheck": true,
     "noImplicitOverride": true,
     "noUnusedLocals": true,
     "noUnusedParameters": true,
-    "noFallthroughCasesInSwitch": true,
     "noEmit": true,
-    "allowSyntheticDefaultImports": true,
-    "useDefineForClassFields": true,
     "isolatedModules": true,
-    "noUncheckedIndexedAccess": true
+    "useDefineForClassFields": true
   },
-  "include": ["src"],
+  "include": ["src", "src/**/*.d.ts", "vite-env.d.ts", "src/vite-env.d.ts"],
   "exclude": ["node_modules", "dist", "build"]
 }
