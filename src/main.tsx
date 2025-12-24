@@ -1,15 +1,19 @@
-import React from "react";
-import ReactDOM from "react-dom/client";
+import type { JSX } from 'react';
+import ReactDOM from 'react-dom/client';
 
 /**
  * Minimal React entry for TypeScript type-checking in strict mode.
  * This can be used by any bundler (e.g., Vite, CRA, Webpack) once configured.
  */
-function App(): React.JSX.Element {
-  return <div>Indian Stock Market Trading Platform</div>;
+function App(): JSX.Element {
+  return (
+    <main role="main" aria-label="Application Root">
+      Indian Stock Market Trading Platform
+    </main>
+  );
 }
 
-const rootElement = document.getElementById("root");
+const rootElement = document.getElementById('root');
 if (rootElement) {
   const root = ReactDOM.createRoot(rootElement);
   root.render(<App />);

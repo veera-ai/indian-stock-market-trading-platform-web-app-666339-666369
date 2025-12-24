@@ -4,4 +4,4 @@
  */
 
 // PUBLIC_INTERFACE
-export const APP_NAME = 'Indian Stock Market Trading Platform';
+export const APP_NAME: string = 'Indian Stock Market Trading Platform';

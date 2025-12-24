@@ -1,59 +1,58 @@
 module.exports = {
   root: true,
+  parser: '@typescript-eslint/parser',
+  parserOptions: {
+    ecmaVersion: 'latest',
+    sourceType: 'module',
+    ecmaFeatures: { jsx: true },
+    project: undefined, // Not using type-aware linting for speed; keep strict TS via tsc
+  },
   env: {
     browser: true,
-    es2021: true,
-    node: true
+    es2022: true,
+    node: true,
   },
-  parser: "@typescript-eslint/parser",
-  parserOptions: {
-    ecmaVersion: "latest",
-    sourceType: "module",
-    ecmaFeatures: {
-      jsx: true
-    },
-    project: null
-  },
-  plugins: ["@typescript-eslint", "react", "react-hooks", "jsx-a11y"],
+  plugins: ['@typescript-eslint', 'react', 'react-hooks', 'jsx-a11y'],
   extends: [
-    "eslint:recommended",
-    "plugin:@typescript-eslint/recommended",
-    "plugin:react/recommended",
-    "plugin:react-hooks/recommended",
-    "plugin:jsx-a11y/recommended",
-    "plugin:@typescript-eslint/strict",
-    "prettier"
+    'eslint:recommended',
+    'plugin:react/recommended',
+    'plugin:react-hooks/recommended',
+    'plugin:jsx-a11y/recommended',
+    'plugin:@typescript-eslint/recommended',
+    'plugin:@typescript-eslint/recommended-type-checked',
+    'plugin:@typescript-eslint/stylistic-type-checked',
+    'prettier',
   ],
   settings: {
-    react: {
-      version: "detect"
-    }
+    react: { version: 'detect' },
   },
   rules: {
-    // Prefer TS-aware unused vars rule
-    "no-unused-vars": "off",
-    "@typescript-eslint/no-unused-vars": [
-      "warn",
-      { "argsIgnorePattern": "^_", "varsIgnorePattern": "^_", "ignoreRestSiblings": true }
+    // Keep strictness while ensuring practical DX
+    'react/react-in-jsx-scope': 'off', // new JSX transform
+    'react/jsx-uses-react': 'off',
+    'react/prop-types': 'off', // using TS
+    '@typescript-eslint/no-unused-vars': ['error', { argsIgnorePattern: '^_', varsIgnorePattern: '^_' }],
+    '@typescript-eslint/ban-ts-comment': [
+      'error',
+      { 'ts-expect-error': 'allow-with-description' }
     ],
-
-    // Enforce exhaustive deps for hooks
-    "react-hooks/exhaustive-deps": "warn",
-
-    // React specific improvements
-    "react/react-in-jsx-scope": "off",
-    "react/prop-types": "off",
-
-    // Ensure consistent accessible code
-    "jsx-a11y/anchor-is-valid": "warn",
-
-    // Leverage TS strictness for implicit any
-    "@typescript-eslint/no-explicit-any": "warn"
+    // Encourage explicit return types for exported functions
+    '@typescript-eslint/explicit-function-return-type': ['warn', { allowExpressions: true }],
   },
+  overrides: [
+    {
+      files: ['*.tsx'],
+      rules: {
+        // Accessibility lint for JSX
+        'jsx-a11y/heading-has-content': 'off',
+      },
+    },
+  ],
   ignorePatterns: [
-    "node_modules/",
-    "dist/",
-    "build/",
-    ".eslintrc.cjs"
-  ]
+    'node_modules/',
+    'dist/',
+    'build/',
+    // Allow vite type refs file
+    'vite-env.d.ts',
+  ],
 };

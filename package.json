@@ -18,11 +18,14 @@
     "node": ">=18"
   },
   "scripts": {
-    "lint": "eslint \"src/**/*.{js,jsx,ts,tsx}\" && prettier --check .",
-    "lint:fix": "eslint --fix \"src/**/*.{js,jsx,ts,tsx}\" && prettier --write .",
+    "eslint": "eslint \"src/**/*.{js,jsx,ts,tsx}\"",
+    "eslint:fix": "eslint --fix \"src/**/*.{js,jsx,ts,tsx}\"",
+    "prettier": "prettier --check .",
+    "prettier:write": "prettier --write .",
+    "lint": "npm run eslint && npm run prettier",
+    "lint:fix": "npm run eslint:fix && npm run prettier:write",
     "type-check": "tsc --noEmit",
-    "format": "prettier --check .",
-    "format:write": "prettier --write .",
+    "check": "npm run type-check && npm run lint",
     "depcheck": "depcheck",
     "build": "tsc --noEmit"
   },
