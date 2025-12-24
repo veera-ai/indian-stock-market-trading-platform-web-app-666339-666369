@@ -1,17 +1,6 @@
-# dependencies
-node_modules/
-pnpm-lock.yaml
-yarn.lock
-package-lock.json
-
-# builds
-build/
-dist/
-.next/
-out/
-coverage/
-
-# misc
-.tmp/
-.temp/
-.DS_Store
+node_modules
+dist
+build
+coverage
+.next
+out

@@ -19,6 +19,7 @@
   },
   "scripts": {
     "lint": "eslint \"src/**/*.{js,jsx,ts,tsx}\" && prettier --check .",
+    "lint:fix": "eslint --fix \"src/**/*.{js,jsx,ts,tsx}\" && prettier --write .",
     "type-check": "tsc --noEmit",
     "format": "prettier --check .",
     "format:write": "prettier --write .",
