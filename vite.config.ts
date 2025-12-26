@@ -8,7 +8,7 @@ export default defineConfig({
   server: {
     open: true, // open browser on start
     strictPort: false, // allow next available port if busy; set true if strict port needed
-    port: 5173,
+    port: 3000,
   },
   preview: {
     open: true,
