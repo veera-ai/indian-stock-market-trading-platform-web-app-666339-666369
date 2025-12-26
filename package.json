@@ -28,9 +28,12 @@
     "check": "npm run type-check && npm run lint",
     "depcheck": "depcheck",
     "build": "tsc --noEmit",
+    "start": "node -e \"console.log('Start script placeholder - build is type-check only in this scaffold')\"",
     "postinstall": "node -e \"console.log('Dependencies installed. Run npm scripts from indian-stock-market-web-app container directory.')\""
   },
   "dependencies": {
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1",
     "react-router-dom": "^6.28.0"
   },
   "devDependencies": {
